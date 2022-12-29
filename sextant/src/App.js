@@ -1,26 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
 
+
+
 function App() {
+
+  const Exhibit = ({ heading, children }) => (
+    <div className="exhibit">
+      <h2 className="exhibit__heading">{heading}</h2>
+      <div className="exhibit__content">
+        {children}
+      </div>
+    </div>
+  );
+  
+  const ip_address = 'This is the users IP address: '
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          This is a test
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1 className="text-border">Sextant App</h1>
       </header>
+      <Exhibit heading="User IP Address" children={ip_address}>
+      </Exhibit>
+      <Exhibit heading="New Test" children="will this work?"> 
+      </Exhibit>
     </div>
+    
   );
 }
+
+
 
 export default App;
